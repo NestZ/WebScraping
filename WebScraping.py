@@ -20,7 +20,7 @@ tr = [['บุญเรือง','ห้วยซ้อ','ศรีดอนช
       ['ปงน้อย','โชคชัย','หนองป่าก่อ']]
 
 from bs4 import BeautifulSoup
-
+p = 'เชียงราย'
 count = 0
 for i in ar:
     for j in tr[count]:
