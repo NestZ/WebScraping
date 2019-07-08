@@ -23,7 +23,7 @@ from bs4 import BeautifulSoup
 
 count = 0
 for i in ar:
-    for j in tr[count]
+    for j in tr[count]:
         file1.writelines('ต.' + j + ' อ.' + i + '\n')
         url = "http://www.noplink.com/postcode_t.php?t=" + j + "&a=" + i + "&a=" + p
         data = requests.get(url)
