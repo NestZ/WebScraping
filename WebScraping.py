@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+file1 = open("data.txt","w")
 import requests
 p = "เชียงราย"
 a = "เชียงของ"
@@ -16,3 +17,5 @@ for i in range(2,len(x.find_all("tr")) - 1):
     for j in range(0,2):
         c = a.find_all("td")[j]
         print c.text
+        L = c.text.encode('utf-8')
+        file1.writelines(L)
