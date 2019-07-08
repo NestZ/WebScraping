@@ -1,11 +1,8 @@
-coding=<cp874>
+# -*- coding: utf-8 -*-
 import requests
-pr = "เชียงราย"
-ar = "เชียงของ"
-tr = "สถาน"
-p = pr.encode(encoding='cp874')
-a = ar.encode(encoding='cp874')
-t = tr.encode(encoding='cp874')
+p = "เชียงราย"
+a = "เชียงของ"
+t = "สถาน"
 url = "http://www.noplink.com/postcode_t.php?t=" + t + "&a=" + a + "&p=" + p
 data = requests.get(url)
 
@@ -17,4 +14,5 @@ for i in range(2,len(x.find_all("tr")) - 1):
     a = x.find_all("tr")[i]
     count = len(a.find_all("td"))
     for j in range(0,2):
-        print a.find_all("td")[j]
+        c = a.find_all("td")[j]
+        print c.text
