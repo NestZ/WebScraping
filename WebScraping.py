@@ -16,7 +16,7 @@ for i in range(2,len(x.find_all("tr")) - 1):
     a = x.find_all("tr")[i]
     count = len(a.find_all("td"))
     for j in range(0,2):
-        c = a.find_all("td")[j]
+        c = a.find_all("td")[abs(j - 1)]
         print c.text
         L = c.text.encode('utf-8')
         file1.writelines(L + ' ')
