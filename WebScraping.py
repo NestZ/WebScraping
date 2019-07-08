@@ -25,7 +25,7 @@ count = 0
 for i in ar:
     for j in tr[count]:
         file1.writelines('ต.' + j + ' อ.' + i + '\n')
-        url = "http://www.noplink.com/postcode_t.php?t=" + j + "&a=" + i + "&a=" + p
+        url = "http://www.noplink.com/postcode_t.php?t=" + j + "&a=" + i + "&p=" + p
         data = requests.get(url)
         soup = BeautifulSoup(data.text, 'html.parser')
         x = soup.find_all("td")[26]
