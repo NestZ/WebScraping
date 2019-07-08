@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 file1 = open("data.txt","w")
-file1.writelines("หมู่ที่     หมู่บ้าน" +'\n')
 import requests
 p = "เชียงราย"
 a = "เชียงของ"
 t = "สถาน"
+file1.writelines('ต.' + t + 'อ.' + a + '\n')
 url = "http://www.noplink.com/postcode_t.php?t=" + t + "&a=" + a + "&p=" + p
 data = requests.get(url)
 
