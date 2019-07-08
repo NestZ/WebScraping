@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
 file1 = open("data.txt","w")
 import requests
-p = "เชียงราย"
-a = "เชียงของ"
 ar = ['เชียงของ','เทิง','พาน','ป่าแดด','แม่จัน','เชียงแสน','แม่สาย','แม่สรวย','เวียงป่าเป้า','พญาเม็งราย','เวียงแก่น','ขุนตาล','แม่ฟ้าหลวง','แม่ลาว','เวียงเชียงรุ้ง','ดอยหลวง']
-t = "สถาน"
 tr = [['บุญเรือง','ห้วยซ้อ','ศรีดอนชัย','ริมโขง'],
       ['เวียง','งิ้ว','ปล้อง','แม่ลอย','เชียงเคี่ยน','ตับเต่า','หงาว','สันทรายงาม','ศรีดอนไชย','หนองแรด'],
       ['สันมะเค็ด','แม่อ้อ','ธารทอง','สันติสุข','ดอยงาม','หัวง้ม','เจริญเมือง','ป่าหุ่ง','ม่วงคำ','ทรายขาว','สันกลาง','แม่เย็น','เมืองพาน','ทานตะวัน','เวียงห้าว'],
@@ -21,20 +18,24 @@ tr = [['บุญเรือง','ห้วยซ้อ','ศรีดอนช
       ['ดงมะดะ','จอมหมอกแก้ว','บัวสลี','ป่าก่อดำ','โป่งแพร่'],
       ['ทุ่งก่อ','ดงมหาวัน','ป่าซาง'],
       ['ปงน้อย','โชคชัย','หนองป่าก่อ']]
-file1.writelines('ต.' + t + 'อ.' + a + '   \n')
-url = "http://www.noplink.com/postcode_t.php?t=" + t + "&a=" + a + "&p=" + p
-data = requests.get(url)
 
 from bs4 import BeautifulSoup
-soup = BeautifulSoup(data.text, 'html.parser')
-x = soup.find_all("td")[26]
 
-for i in range(2,len(x.find_all("tr")) - 1):
-    a = x.find_all("tr")[i]
-    count = len(a.find_all("td"))
-    for j in range(0,2):
-        c = a.find_all("td")[abs(j - 1)]
-        print c.text
-        L = c.text.encode('utf-8')
-        file1.writelines(L + ' ')
-    file1.writelines('\n')
+count = 0
+for i in ar:
+    for j in tr[count]
+        file1.writelines('ต.' + j + ' อ.' + i + '\n')
+        url = "http://www.noplink.com/postcode_t.php?t=" + j + "&a=" + i + "&a=" + p
+        data = requests.get(url)
+        soup = BeautifulSoup(data.text, 'html.parser')
+        x = soup.find_all("td")[26]
+        for i in range(2,len(x.find_all("tr")) - 1):
+                a = x.find_all("tr")[i]
+                count = len(a.find_all("td"))
+                for j in range(0,2):
+                    c = a.find_all("td")[abs(j - 1)]
+                    print c.text
+                    L = c.text.encode('utf-8')
+                    file1.writelines(L + ' ')
+                file1.writelines('\n')
+    count += 1
