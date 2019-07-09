@@ -39,4 +39,4 @@ for i in ar:
                     file1.writelines(L + ' ')
                 file1.writelines('\n')
     count += 1
-    time.sleep(2)
+    time.sleep(10)
