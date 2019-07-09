@@ -30,11 +30,11 @@ for i in ar:
         data = requests.get(url)
         soup = BeautifulSoup(data.text, 'html.parser')
         x = soup.find_all("td")[26]
-        for i in range(2,len(x.find_all("tr")) - 1):
-                a = x.find_all("tr")[i]
+        for k in range(2,len(x.find_all("tr")) - 1):
+                a = x.find_all("tr")[k]
                 count = len(a.find_all("td"))
-                for j in range(0,2):
-                    c = a.find_all("td")[abs(j - 1)]
+                for l in range(0,2):
+                    c = a.find_all("td")[abs(l - 1)]
                     print c.text
                     L = c.text.encode('utf-8')
                     file1.writelines(L + ' ')
