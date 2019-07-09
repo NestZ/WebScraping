@@ -32,7 +32,6 @@ for i in ar:
         x = soup.find_all("td")[26]
         for k in range(2,len(x.find_all("tr")) - 1):
                 a = x.find_all("tr")[k]
-                count = len(a.find_all("td"))
                 for l in range(0,2):
                     c = a.find_all("td")[abs(l - 1)]
                     print c.text
